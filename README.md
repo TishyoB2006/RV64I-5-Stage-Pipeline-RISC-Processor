@@ -1,6 +1,6 @@
 # 5-Stage Pipelined RISC-V Processor with Advanced Hazard Mitigation & Exception Handling
 
-This repository contains the hardware description (HDL) of a high-performance, **5-stage pipelined RISC-V processor** (Fetch, Decode, Execute, Memory, Writeback). Designed for efficiency and robust error handling, this microarchitecture goes beyond standard academic pipelines by integrating a specialized forwarding network to eliminate specific memory hazards and implementing full supervisor-level exception tracking.
+This repository contains the hardware description (HDL) of a, **5-stage pipelined RISC-V processor** (Fetch, Decode, Execute, Memory, Writeback). Designed for robust error handling, this microarchitecture goes beyond standard academic pipelines by integrating a specialized forwarding network to eliminate specific memory hazards and implementing full supervisor-level exception tracking.
 
 ---
 
@@ -69,3 +69,39 @@ The processor core currently decodes and executes the following core RISC-V inst
 ## 💻 Simulation Instructions
 
 This design is validated using Xilinx Vivado .Synthesis and RTL analysis using Linter have been done. Further implementation of processor on FPGA blocks has also been generated
+
+---
+## 📂 Repository Structure
+
+* `/Source Files`
+  * `CPU_Top.v`
+  * `Instruction_Memory.v`
+  * `Data_Memory.v`
+  * `Pipelined_Datapath`
+    * `PipelineDatapath.v.v`
+    * `/Top_Control_Unit`
+      * `Top_Control_Unit.v`
+      * `MainControlUnit.v`
+    * `/PipelineRegisters`
+      * `IF-ID.v`
+      * `ID-EX.v`
+      * `EX-MEM.v`
+      * `MEM-WB.v`
+    * `/ExceptionRegisters`
+      * `SCAUSE.v`
+      * `SEPC.v`
+    * `ALU.v`
+    *  `ALUMux.v`
+    *  `ALUcontrol.v`
+    *  `ForwardingUnit.v`
+    *  `HazardDetection.v`
+    *  `ImmGen.v`
+    *  `PC.v`
+    *  `PCInputController.v`
+    *  `RegisterFile.v`
+    *  `ResultMux.v`    
+* `FPGA_Implementation_Design.png`
+* `RTL_Analaysis_Linter.png`
+* `Synthesis_Circuit.png`
+
+---
