@@ -4,7 +4,7 @@ This repository contains the hardware description (HDL) of a, **5-stage pipeline
 
 ---
 
-## 🚀 Special Architectural Features & Design Highlights
+##  Special Architectural Features & Design Highlights
 
 While standard 5-stage pipelines rely heavily on performance-killing stall cycles (hazard units) to resolve data dependencies, this design introduces custom hardware bypasses and strict ISA compliance features.
 
@@ -24,7 +24,7 @@ The processor features a robust, hardware-level Exception Handling Unit capable 
 
 ---
 
-## 🧠 Deep Dive: Exception Architecture (`scause` & `sepc`)
+##  Deep Dive: Exception Architecture (`scause` & `sepc`)
 
 When an exception occurs (e.g., an illegal instruction is decoded), the processor stops the problematic instruction from updating the architectural state, flushes the pipeline downstream to prevent cascading errors, and jumps to the pre-configured trap vector address. 
 
@@ -39,12 +39,12 @@ The `scause` register indicates the precise reason the trap was taken.
 
 ---
 
-## 📐 Processor Architecture & Datapath Layout
+##  Processor Architecture & Datapath Layout
 The Processor follows **Harvard Architecture** with separate Memories for Instruction and Data fetching.This provides facility to read instruction and access data in memory in the same clock cycle
 
 ---
 
-## 🛠️ Instruction Set Architecture (ISA) Support
+##  Instruction Set Architecture (ISA) Support
 
 The processor core currently decodes and executes the following core RISC-V instructions:
 
@@ -66,12 +66,12 @@ The processor core currently decodes and executes the following core RISC-V inst
 
 ---
 
-## 💻 Simulation Instructions
+##  Simulation Instructions
 
 This design is validated using Xilinx Vivado .Synthesis and RTL analysis using Linter have been done. Further implementation of processor on FPGA blocks has also been generated
 
 ---
-## 📂 Repository Structure
+##  Repository Structure
 
 * `/Source Files`
   * `CPU_Top.v`
